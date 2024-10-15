@@ -1,0 +1,125 @@
+Python supports all basic arithmetic operations. Here’s a quick rundown of the basic arithmetic operators and examples of how to use them.
+
+### 1. **Addition (`+`)**
+   - Adds two numbers together.
+   - **Example**:
+     ```python
+     a = 10
+     b = 5
+     result = a + b
+     print(result)  # Output: 15
+     ```
+
+### 2. **Subtraction (`-`)**
+   - Subtracts the second number from the first.
+   - **Example**:
+     ```python
+     a = 10
+     b = 5
+     result = a - b
+     print(result)  # Output: 5
+     ```
+
+### 3. **Multiplication (`*`)**
+   - Multiplies two numbers.
+   - **Example**:
+     ```python
+     a = 10
+     b = 5
+     result = a * b
+     print(result)  # Output: 50
+     ```
+
+### 4. **Division (`/`)**
+   - Divides the first number by the second. The result is always a float.
+   - **Example**:
+     ```python
+     a = 10
+     b = 4
+     result = a / b
+     print(result)  # Output: 2.5
+     ```
+
+### 5. **Floor Division (`//`)**
+   - Divides the first number by the second and returns the largest integer less than or equal to the result (discards the decimal part).
+   - **Example**:
+     ```python
+     a = 10
+     b = 4
+     result = a // b
+     print(result)  # Output: 2
+     ```
+
+### 6. **Modulus (`%`)**
+   - Returns the remainder of the division of the first number by the second.
+   - **Example**:
+     ```python
+     a = 10
+     b = 4
+     result = a % b
+     print(result)  # Output: 2
+     ```
+
+### 7. **Exponentiation (`**`)**
+   - Raises the first number to the power of the second number.
+   - **Example**:
+     ```python
+     a = 2
+     b = 3
+     result = a ** b
+     print(result)  # Output: 8
+     ```
+
+### Example Program: Using Basic Arithmetic Operators
+```python
+# Basic arithmetic operations
+a = 15
+b = 4
+
+# Addition
+add_result = a + b
+print(f"{a} + {b} = {add_result}")
+
+# Subtraction
+sub_result = a - b
+print(f"{a} - {b} = {sub_result}")
+
+# Multiplication
+mul_result = a * b
+print(f"{a} * {b} = {mul_result}")
+
+# Division (result is float)
+div_result = a / b
+print(f"{a} / {b} = {div_result}")
+
+# Floor Division (integer division)
+floor_div_result = a // b
+print(f"{a} // {b} = {floor_div_result}")
+
+# Modulus (remainder)
+mod_result = a % b
+print(f"{a} % {b} = {mod_result}")
+
+# Exponentiation (power)
+exp_result = a ** b
+print(f"{a} ** {b} = {exp_result}")
+```
+
+### Sample Output:
+```
+15 + 4 = 19
+15 - 4 = 11
+15 * 4 = 60
+15 / 4 = 3.75
+15 // 4 = 3
+15 % 4 = 3
+15 ** 4 = 50625
+```
+
+### Special Notes:
+- **Division (`/`)** always returns a float, even if the result is a whole number.
+- **Floor Division (`//`)** gives the integer part of the division.
+- **Modulus (`%`)** returns the remainder after division.
+- **Exponentiation (`**`)** allows you to raise a number to a power (e.g., `2**3` is `8`).
+
+These basic arithmetic operators are fundamental in Python for performing calculations.
