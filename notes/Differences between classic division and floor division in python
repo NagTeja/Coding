@@ -1,0 +1,56 @@
+In Python, **classic division** (`/`) and **floor division** (`//`) behave differently in terms of the result they produce. Here’s a breakdown of the key differences:
+
+### 1. **Classic Division (`/`)**
+   - **Definition**: The `/` operator performs division and returns a floating-point number, even if both operands are integers.
+   - **Behavior**:
+     - Always returns a **float**.
+     - Retains the decimal part (fractional part) of the result, even if the division is exact.
+   - **Example**:
+     ```python
+     print(10 / 3)   # Output: 3.3333333333333335
+     print(10 / 2)   # Output: 5.0 (even though it's a whole number, it's returned as a float)
+     ```
+
+### 2. **Floor Division (`//`)**
+   - **Definition**: The `//` operator performs division but **floors** (rounds down) the result to the nearest whole number, discarding any fractional part.
+   - **Behavior**:
+     - Returns an **integer** if both operands are integers.
+     - Returns a **float** if at least one operand is a float, but the result is still floored.
+     - It **rounds down** towards negative infinity, meaning the result is the greatest integer less than or equal to the result.
+   - **Example**:
+     ```python
+     print(10 // 3)   # Output: 3
+     print(10 // 2)   # Output: 5
+     print(-10 // 3)  # Output: -4 (rounded down, not towards zero)
+     ```
+
+### Differences in Detail:
+
+| **Operation**         | **Expression** | **Result (Classic)** | **Result (Floor)** |
+|-----------------------|----------------|----------------------|---------------------|
+| Positive Division      | `10 / 3`       | `3.3333333333333335`  | `3`                 |
+| Whole Number Division  | `10 / 2`       | `5.0`                | `5`                 |
+| Negative Division      | `-10 / 3`      | `-3.3333333333333335` | `-4` (floored down) |
+| Division with Float    | `10 / 3.0`     | `3.3333333333333335`  | `3.0`               |
+
+### Key Points:
+- **Classic Division**:
+  - Always returns a float, even when dividing integers.
+  - Useful when you want precise results, including the fractional part.
+  
+- **Floor Division**:
+  - Returns the largest integer less than or equal to the division result (it rounds down).
+  - For positive numbers, it behaves similarly to integer division in other languages.
+  - For negative numbers, the result is floored, meaning it rounds towards negative infinity.
+
+### Example of Different Behavior:
+For negative numbers, the difference between classic division and floor division is more noticeable:
+
+```python
+print(-7 / 2)   # Classic division: Output: -3.5
+print(-7 // 2)  # Floor division: Output: -4 (rounds down to -4)
+```
+
+### Summary:
+- **Classic division** (`/`): Returns a float and keeps the decimal part.
+- **Floor division** (`//`): Discards the decimal part and returns the largest integer less than or equal to the result, rounding down if necessary.
