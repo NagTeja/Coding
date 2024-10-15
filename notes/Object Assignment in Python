@@ -1,0 +1,80 @@
+In Python, **object assignment** refers to the process of binding a variable to an object. Python variables are not boxes that contain objects, but labels that reference objects. This is known as **reference semantics** or **object references**. Let's dive into how object assignment works, including mutable and immutable objects, and important nuances.
+
+### Key Concepts:
+
+1. **Assignment Creates References, Not Copies**:
+   When you assign one variable to another, you're not creating a copy of the object but rather a reference to the same object. Changes made through one reference will affect the other if the object is mutable.
+
+   ```python
+   a = [1, 2, 3]  # A list is a mutable object
+   b = a          # b now refers to the same list as a
+   print(a, b)    # Output: [1, 2, 3] [1, 2, 3]
+
+   b.append(4)    # Modifying b affects a as well
+   print(a, b)    # Output: [1, 2, 3, 4] [1, 2, 3, 4]
+   ```
+
+2. **Mutable vs. Immutable Objects**:
+   - **Mutable objects** can be changed after they are created (e.g., lists, dictionaries, sets).
+   - **Immutable objects** cannot be changed after creation (e.g., integers, strings, tuples).
+   
+   With **mutable objects**, changes through one reference will affect all other references. With **immutable objects**, a new object is created if changes are made.
+
+   Example of immutable object:
+   ```python
+   x = 10        # x is an integer, which is immutable
+   y = x         # y refers to the same integer object as x
+   y += 5        # y now refers to a new object, x is unchanged
+   print(x, y)   # Output: 10 15
+   ```
+
+3. **Object Identity (`id`)**:
+   - The `id()` function returns the memory address (or object identity) of an object.
+   - If two variables refer to the same object, they will have the same `id`.
+
+   Example:
+   ```python
+   a = [1, 2, 3]
+   b = a
+   print(id(a), id(b))  # Both have the same ID because they refer to the same object
+
+   b = [4, 5, 6]        # b now refers to a new object
+   print(id(a), id(b))  # Different IDs after reassignment
+   ```
+
+4. **Shallow vs. Deep Copy**:
+   - **Shallow Copy**: Creates a new object but does not recursively copy inner objects (i.e., only the top-level object is copied).
+   - **Deep Copy**: Recursively copies all nested objects, creating a new, independent object.
+
+   Example of shallow copy:
+   ```python
+   import copy
+   a = [[1, 2], [3, 4]]
+   b = copy.copy(a)  # Shallow copy
+   b[0].append(5)    # Modifies the inner list, affects both a and b
+   print(a, b)       # Output: [[1, 2, 5], [3, 4]] [[1, 2, 5], [3, 4]]
+   ```
+
+   Example of deep copy:
+   ```python
+   c = copy.deepcopy(a)  # Deep copy
+   c[0].append(6)        # This change affects only c
+   print(a, c)           # Output: [[1, 2, 5], [3, 4]] [[1, 2, 5, 6], [3, 4]]
+   ```
+
+5. **Assigning to Immutable Objects**:
+   For immutable objects like integers and strings, assignment does not change the original object, but instead creates a new object.
+
+   Example with strings:
+   ```python
+   s1 = "hello"
+   s2 = s1
+   s2 = s2 + " world"   # This creates a new string object for s2
+   print(s1, s2)        # Output: "hello" "hello world"
+   ```
+
+### Summary:
+- **Object assignment** in Python creates a reference to the object, not a copy.
+- If the object is **mutable**, modifying it through one reference will affect all references pointing to that object.
+- If the object is **immutable**, reassigning the variable will result in a new object being created.
+- For deep copying of nested mutable objects, use `copy.deepcopy()` to avoid unwanted side effects.
