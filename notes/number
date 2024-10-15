@@ -1,0 +1,96 @@
+In Python, there are several types of numbers, each suited for different use cases. These are the main types of numbers:
+
+1. Integer (int):
+Whole numbers, either positive or negative, without a decimal point.
+Example: -3, 0, 7, 42
+Usage:
+
+python
+Copy code
+a = 10
+b = -5
+print(type(a))  # Output: <class 'int'>
+print(type(b))  # Output: <class 'int'>
+2. Floating-Point Numbers (float):
+Numbers that contain a decimal point. They can also be positive or negative.
+Example: 3.14, -7.5, 0.0
+Usage:
+
+python
+Copy code
+x = 3.14159
+y = -0.5
+print(type(x))  # Output: <class 'float'>
+print(type(y))  # Output: <class 'float'>
+3. Complex Numbers (complex):
+Numbers that have a real part and an imaginary part (used mostly in scientific computations).
+Represented as a + bj, where a is the real part and b is the imaginary part.
+Example: 3 + 4j, 1 - 2j
+Usage:
+
+python
+Copy code
+z = 3 + 4j
+w = 1 - 2j
+print(type(z))  # Output: <class 'complex'>
+print(type(w))  # Output: <class 'complex'>
+4. Boolean (bool):
+Technically a subtype of integers. The two possible values are True and False, which internally are equivalent to 1 and 0, respectively.
+Example: True, False
+Usage:
+
+python
+Copy code
+a = True
+b = False
+print(type(a))  # Output: <class 'bool'>
+print(a + 1)    # Output: 2 (True is treated as 1)
+print(b + 1)    # Output: 1 (False is treated as 0)
+5. Binary, Octal, and Hexadecimal Numbers:
+Python allows integers to be represented in other numeric bases like binary, octal, and hexadecimal.
+Binary: Base-2 numbers (0s and 1s), prefixed with 0b or 0B.
+
+python
+Copy code
+binary_num = 0b1010  # Binary for 10
+print(binary_num)  # Output: 10
+Octal: Base-8 numbers (digits 0-7), prefixed with 0o or 0O.
+
+python
+Copy code
+octal_num = 0o12  # Octal for 10
+print(octal_num)  # Output: 10
+Hexadecimal: Base-16 numbers (digits 0-9 and letters A-F), prefixed with 0x or 0X.
+
+python
+Copy code
+hex_num = 0xA  # Hexadecimal for 10
+print(hex_num)  # Output: 10
+Number Type Conversions:
+Python allows conversions between number types using built-in functions like int(), float(), complex(), etc.
+
+Example:
+
+python
+Copy code
+# Integer to float
+a = 10
+b = float(a)
+print(b)  # Output: 10.0
+
+# Float to integer
+c = 10.75
+d = int(c)
+print(d)  # Output: 10
+
+# Integer to complex
+e = 5
+f = complex(e)
+print(f)  # Output: (5+0j)
+Summary of Number Types:
+Integers (int): Whole numbers, positive or negative.
+Floats (float): Numbers with decimal points.
+Complex (complex): Numbers with a real and imaginary part.
+Booleans (bool): True or False, a subtype of integers.
+Binary, Octal, Hexadecimal: Alternative integer representations in different bases.
+These different types provide flexibility for handling various numeric operations in Python.
